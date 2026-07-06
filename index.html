@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>瑄宝闯三国</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-view="home" aria-label="回到首页">
+          <span class="brand-mark">三</span>
+          <span>
+            <strong>瑄宝闯三国</strong>
+            <small>表达 · 判断 · 复盘 · 换办法</small>
+          </span>
+        </button>
+        <nav class="topnav" aria-label="主要导航">
+          <button type="button" data-view="map">关卡</button>
+          <button type="button" data-view="journal">成长册</button>
+          <button type="button" data-view="parent">家长页</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="view hero-view is-active" id="homeView">
+          <div class="hero-art cover-map" aria-hidden="true">
+            <div class="cover-image-wrap">
+              <img src="./assets/sanguo-cover.png" alt="">
+              <div class="cover-overlay cover-overlay-scroll">
+                <strong>瑄宝闯三国</strong>
+                <span>表达 · 判断 · 复盘 · 换办法</span>
+              </div>
+              <div class="cover-overlay cover-overlay-task">
+                <strong>当前任务</strong>
+              </div>
+              <div class="cover-overlay cover-overlay-legend">
+                <span>已完成</span>
+                <span>当前关卡</span>
+                <span>未通关</span>
+              </div>
+            </div>
+            <svg viewBox="0 0 960 640" role="img">
+              <defs>
+                <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#d8e2d8"></stop>
+                  <stop offset="46%" stop-color="#f0d79f"></stop>
+                  <stop offset="100%" stop-color="#93c5cf"></stop>
+                </linearGradient>
+              </defs>
+              <rect width="960" height="640" fill="url(#sky)"></rect>
+              <path d="M0 480 C120 438 230 470 334 420 C462 358 590 392 716 320 C808 268 878 260 960 230 L960 640 L0 640 Z" fill="#83a86d"></path>
+              <path d="M0 560 C160 512 292 566 442 510 C592 454 720 510 960 432 L960 640 L0 640 Z" fill="#5f8b65"></path>
+              <path d="M650 0 C604 70 548 104 518 176 C492 240 430 280 342 316" fill="none" stroke="#415b54" stroke-width="92" stroke-linecap="round" opacity="0.34"></path>
+              <path d="M42 260 C146 180 224 210 314 144 C402 80 490 112 590 72" fill="none" stroke="#3f5d57" stroke-width="72" stroke-linecap="round" opacity="0.5"></path>
+              <path d="M660 18 C690 116 650 182 710 256 C776 338 890 336 960 420" fill="none" stroke="#2b92bf" stroke-width="34" stroke-linecap="round"></path>
+              <path d="M670 18 C700 116 660 180 720 250 C784 326 890 326 958 406" fill="none" stroke="#bfeaf2" stroke-width="7" stroke-linecap="round" opacity="0.76"></path>
+
+              <g class="cover-scroll">
+                <path d="M84 22 C94 12 112 10 124 20 L330 20 C344 10 363 12 372 25 L360 118 C350 132 330 134 318 124 L126 124 C112 136 90 132 82 116 Z" fill="#f4d18e" stroke="#8f5a2f" stroke-width="5"></path>
+                <path d="M124 20 C112 36 112 106 126 124" fill="none" stroke="#b77a3f" stroke-width="5"></path>
+                <path d="M330 20 C344 38 342 104 318 124" fill="none" stroke="#b77a3f" stroke-width="5"></path>
+                <text x="226" y="72" text-anchor="middle" font-size="38" font-weight="900" fill="#3f2a1d">瑄宝三国</text>
+                <text x="226" y="106" text-anchor="middle" font-size="20" font-weight="800" fill="#6f4427">表达 · 判断 · 复盘 · 换办法</text>
+              </g>
+
+              <path d="M132 478 C230 410 292 438 372 358 C462 268 528 338 624 248 C700 176 760 206 842 132" fill="none" stroke="#7f5a2e" stroke-width="8" stroke-dasharray="18 16" stroke-linecap="round" opacity="0.72"></path>
+              <g fill="#fff8df" stroke="#a37a3d" stroke-width="4">
+                <circle cx="132" cy="478" r="15"></circle>
+                <circle cx="250" cy="422" r="15"></circle>
+                <circle cx="372" cy="358" r="15"></circle>
+                <circle cx="512" cy="315" r="15"></circle>
+                <circle cx="624" cy="248" r="15"></circle>
+                <circle cx="742" cy="190" r="15"></circle>
+                <circle cx="842" cy="132" r="16" fill="#ffd65b"></circle>
+              </g>
+
+              <g class="cover-flag">
+                <path d="M145 322 L145 458" stroke="#6b3d2f" stroke-width="8" stroke-linecap="round"></path>
+                <path d="M152 332 L220 312 L220 390 L152 408 Z" fill="#b94335" stroke="#e6c06f" stroke-width="4"></path>
+                <text x="186" y="375" text-anchor="middle" font-size="28" font-weight="900" fill="#fff6d8">小沛</text>
+              </g>
+              <g class="cover-flag">
+                <path d="M392 206 L392 350" stroke="#6b3d2f" stroke-width="8" stroke-linecap="round"></path>
+                <path d="M399 216 L462 196 L462 274 L399 292 Z" fill="#7b695c" stroke="#e6c06f" stroke-width="4"></path>
+                <text x="431" y="260" text-anchor="middle" font-size="28" font-weight="900" fill="#fff6d8">许都</text>
+              </g>
+              <g class="cover-flag">
+                <path d="M514 410 L514 554" stroke="#6b3d2f" stroke-width="8" stroke-linecap="round"></path>
+                <path d="M521 420 L588 400 L588 478 L521 496 Z" fill="#527c5b" stroke="#e6c06f" stroke-width="4"></path>
+                <text x="555" y="464" text-anchor="middle" font-size="28" font-weight="900" fill="#fff6d8">古城</text>
+              </g>
+              <g class="cover-flag">
+                <path d="M716 220 L716 360" stroke="#6b3d2f" stroke-width="8" stroke-linecap="round"></path>
+                <path d="M723 230 L790 210 L790 288 L723 306 Z" fill="#b94335" stroke="#e6c06f" stroke-width="4"></path>
+                <text x="756" y="274" text-anchor="middle" font-size="28" font-weight="900" fill="#fff6d8">官渡</text>
+              </g>
+              <g class="cover-flag">
+                <path d="M812 70 L812 206" stroke="#6b3d2f" stroke-width="8" stroke-linecap="round"></path>
+                <path d="M819 80 L886 60 L886 138 L819 156 Z" fill="#2d7f8d" stroke="#e6c06f" stroke-width="4"></path>
+                <text x="852" y="124" text-anchor="middle" font-size="28" font-weight="900" fill="#fff6d8">乌巢</text>
+              </g>
+
+              <g class="cover-task">
+                <path d="M354 150 H574 Q594 150 594 170 V226 Q594 246 574 246 H468 L450 270 L438 246 H354 Q334 246 334 226 V170 Q334 150 354 150 Z" fill="#fff8df" stroke="#c18a4f" stroke-width="4"></path>
+                <text x="464" y="188" text-anchor="middle" font-size="20" font-weight="800" fill="#8a6240">当前任务</text>
+                <text x="464" y="224" text-anchor="middle" font-size="28" font-weight="900" fill="#4a2d1e">选择一关，讲清理由</text>
+              </g>
+
+              <g class="kid-hero">
+                <ellipse cx="448" cy="354" rx="58" ry="18" fill="#d89f32" opacity="0.38"></ellipse>
+                <circle cx="448" cy="274" r="34" fill="#f2b27d"></circle>
+                <path d="M416 266 C428 230 468 228 482 264 C462 252 438 252 416 266 Z" fill="#2f2a2a"></path>
+                <path d="M404 388 C410 318 486 318 492 388 Z" fill="#f5c542"></path>
+                <path d="M404 388 L492 388 L506 428 L390 428 Z" fill="#3b7f6a"></path>
+                <path d="M424 280 Q448 300 472 280" fill="none" stroke="#7a382c" stroke-width="5" stroke-linecap="round"></path>
+                <path d="M492 336 C528 310 542 284 548 250" fill="none" stroke="#d6a35e" stroke-width="7" stroke-linecap="round"></path>
+                <path d="M546 248 L574 230" stroke="#d6a35e" stroke-width="7" stroke-linecap="round"></path>
+                <path d="M548 250 C566 252 582 246 596 232 C586 260 570 278 544 286 Z" fill="#fff8df" stroke="#b99b61" stroke-width="4"></path>
+              </g>
+
+              <g class="cover-legend">
+                <path d="M34 520 H220 Q238 520 238 538 V604 Q238 622 220 622 H34 Q16 622 16 604 V538 Q16 520 34 520 Z" fill="#f7dfa6" stroke="#9d6a35" stroke-width="4"></path>
+                <circle cx="58" cy="550" r="9" fill="#ffd65b" stroke="#a37a3d" stroke-width="3"></circle>
+                <text x="82" y="558" font-size="20" font-weight="800" fill="#5d3b21">已完成</text>
+                <circle cx="58" cy="578" r="9" fill="#fff8df" stroke="#a37a3d" stroke-width="3"></circle>
+                <text x="82" y="586" font-size="20" font-weight="800" fill="#5d3b21">当前关卡</text>
+                <circle cx="58" cy="606" r="9" fill="#e6e2d3" stroke="#9f9a88" stroke-width="3"></circle>
+                <text x="82" y="614" font-size="20" font-weight="800" fill="#5d3b21">未通关</text>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-copy">
+            <h1>瑄宝闯三国</h1>
+            <p>跟着小军师走三国地图，每一关练一次表达、判断、复盘和换办法。从小沛到乌巢，选择一关，先把理由讲清楚。</p>
+            <div class="mode-picker" aria-label="选择模式">
+              <button class="mode-card is-selected" type="button" data-mode="family">
+                <span>亲子模式</span>
+                <small>家长陪玩，少纠正，多追问</small>
+              </button>
+              <button class="mode-card" type="button" data-mode="kid">
+                <span>孩子模式</span>
+                <small>自己闯关，系统温和提示</small>
+              </button>
+            </div>
+            <div class="hero-actions">
+              <button class="primary-btn" type="button" data-view="map">打开三国地图</button>
+              <button class="ghost-btn" type="button" data-view="journal">看成长册</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="mapView">
+          <div class="section-heading">
+            <p class="eyebrow">群雄混战与刘备漂泊</p>
+            <h2>三国地图闯关</h2>
+            <p class="section-note">先点地图上的阶段，再选择今天想玩的故事。每个阶段只展开几关，页面不挤，也可以自由跳关。</p>
+          </div>
+          <div class="map-grid" id="levelGrid"></div>
+        </section>
+
+        <section class="view play-view" id="playView">
+          <div class="play-layout">
+            <aside class="level-rail">
+              <button class="back-btn" type="button" data-view="map">返回关卡</button>
+              <div id="levelSummary"></div>
+            </aside>
+            <section class="play-panel">
+              <div class="stepper" id="stepper"></div>
+              <div id="playStage"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="journalView">
+          <div class="section-heading row-heading">
+            <div>
+              <p class="eyebrow">成长册</p>
+              <h2>每次闯关都留下一张成长卡</h2>
+            </div>
+            <div class="journal-actions">
+              <button class="primary-btn" type="button" id="exportJournalBtn">导出成长册</button>
+              <button class="ghost-btn" type="button" id="importJournalBtn">导入成长册</button>
+              <button class="ghost-btn danger" type="button" id="clearJournalBtn">清空本机记录</button>
+            </div>
+          </div>
+          <input class="visually-hidden" type="file" id="importJournalInput" accept="application/json,.json">
+          <div class="backup-status" id="journalBackupStatus" aria-live="polite"></div>
+          <div class="journal-list" id="journalList"></div>
+        </section>
+
+        <section class="view" id="parentView">
+          <div class="section-heading">
+            <p class="eyebrow">家长页</p>
+            <h2>只看成长，不做排名</h2>
+          </div>
+          <div class="parent-grid" id="parentStats"></div>
+          <div class="guide-panel">
+            <h3>陪玩提醒</h3>
+            <div class="guide-list">
+              <p>先听完孩子的理由，再追问一句“还有别的办法吗？”</p>
+              <p>不要纠正历史细节，重点看她能不能说清楚选择和原因。</p>
+              <p>遇到失败关卡时，用“下次换一个什么办法”收尾。</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="emptyJournalTemplate">
+      <div class="empty-state">
+        <strong>还没有成长卡</strong>
+        <p>先完成一个关卡，这里会保存孩子的选择、讲述和徽章。</p>
+        <button class="primary-btn" type="button" data-view="map">去闯关</button>
+      </div>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
