@@ -524,7 +524,7 @@ function renderMap() {
     <div class="map-layout">
     <section class="game-map-panel" aria-label="三国阶段地图">
       <div class="stage-map">
-        <img src="./assets/sanguo-cover.png" alt="三国地图">
+        <img src="./assets/sanguo-cover.webp" alt="三国地图">
         <div class="cover-overlay cover-overlay-scroll">
           <strong>瑄宝闯三国</strong>
           <span>表达 · 判断 · 复盘 · 换办法</span>
