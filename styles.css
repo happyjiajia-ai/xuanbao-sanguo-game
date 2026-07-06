@@ -86,6 +86,7 @@ button {
 .brand small {
   color: var(--muted);
   font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 .topnav {
@@ -216,6 +217,7 @@ button {
   color: #684126;
   font-size: clamp(0.56rem, 2.4cqw, 0.92rem);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .cover-overlay-task {
@@ -664,6 +666,100 @@ button {
   box-shadow:
     0 0 0 4px rgba(242, 188, 69, 0.28),
     0 12px 24px rgba(64, 42, 24, 0.22);
+}
+
+.stage-order {
+  display: inline-grid;
+  width: 1.45rem;
+  height: 1.45rem;
+  margin-right: 0.35rem;
+  place-items: center;
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1;
+  background: #9f4a35;
+  border-radius: 50%;
+}
+
+.stage-node.is-active .stage-order {
+  color: var(--teal);
+  background: #fff;
+}
+
+.stage-sequence {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 250, 240, 0.88);
+  border: 1px solid rgba(126, 107, 74, 0.18);
+  border-radius: 0.95rem;
+}
+
+.stage-sequence-step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.22rem;
+  min-height: 4.5rem;
+  padding: 0.45rem 0.35rem;
+  color: #654226;
+  text-align: center;
+  background: #fffdf8;
+  border: 1px solid #e5d5b7;
+  border-radius: 0.75rem;
+}
+
+.stage-sequence-step::after {
+  content: "";
+  position: absolute;
+  top: 1.05rem;
+  right: -0.5rem;
+  width: 0.5rem;
+  height: 2px;
+  background: #d4a35a;
+}
+
+.stage-sequence-step:last-child::after {
+  content: none;
+}
+
+.stage-sequence-step strong {
+  display: grid;
+  width: 1.45rem;
+  height: 1.45rem;
+  place-items: center;
+  color: #fff;
+  font-size: 0.82rem;
+  background: #9f4a35;
+  border-radius: 50%;
+}
+
+.stage-sequence-step span {
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.stage-sequence-step small {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.stage-sequence-step.is-active {
+  color: #fff;
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.stage-sequence-step.is-active strong {
+  color: var(--teal);
+  background: #fff;
+}
+
+.stage-sequence-step.is-active small {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .map-game-advisor {
@@ -1786,6 +1882,25 @@ input {
     font-size: 0.76rem;
   }
 
+  .stage-order {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.72rem;
+  }
+
+  .stage-sequence {
+    grid-auto-flow: column;
+    grid-auto-columns: 7.2rem;
+    grid-template-columns: none;
+    overflow-x: auto;
+    padding: 0.65rem;
+    scrollbar-width: thin;
+  }
+
+  .stage-sequence-step {
+    min-height: 4.1rem;
+  }
+
   .stage-level-panel {
     padding: 0.85rem;
   }
@@ -1881,6 +1996,46 @@ input {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+  gap: clamp(1rem, 3vw, 1.45rem);
+  align-items: start;
+}
+
+.map-layout .game-map-panel,
+.map-layout .stage-level-panel {
+  min-width: 0;
+}
+
+.map-layout .stage-map {
+  min-height: clamp(22rem, 45vw, 34rem);
+}
+
+.map-layout .stage-level-panel {
+  max-height: calc(100vh - 6rem);
+  overflow: auto;
+}
+
+.map-layout .stage-level-grid {
+  grid-template-columns: 1fr;
+}
+
+.map-layout .timeline-card {
+  min-height: 0;
+}
+
+@media (max-width: 920px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map-layout .stage-level-panel {
+    max-height: none;
+    overflow: visible;
+  }
+}
 :root {
   color-scheme: light;
   --ink: #26322f;
@@ -1969,6 +2124,7 @@ button {
 .brand small {
   color: var(--muted);
   font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 .topnav {
@@ -2099,6 +2255,7 @@ button {
   color: #684126;
   font-size: clamp(0.56rem, 2.4cqw, 0.92rem);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .cover-overlay-task {
