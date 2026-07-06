@@ -521,6 +521,7 @@ function renderMap() {
   const selectedStage = stageGroups.find(stage => stage.id === state.mapStage) || recommendedStage;
   const visibleLevels = selectedStage.levels.map(id => levels.find(level => level.id === id)).filter(Boolean);
   levelGrid.innerHTML = `
+    <div class="map-layout">
     <section class="game-map-panel" aria-label="三国阶段地图">
       <div class="stage-map">
         <img src="./assets/sanguo-cover.png" alt="三国地图">
@@ -537,15 +538,28 @@ function renderMap() {
           <span>当前关卡</span>
           <span>未通关</span>
         </div>
-        ${stageGroups.map(stage => {
+        ${stageGroups.map((stage, index) => {
           const stageLevels = stage.levels.map(id => levels.find(level => level.id === id)).filter(Boolean);
           const completed = stageLevels.filter(level => done.has(level.id)).length;
           const isActive = stage.id === selectedStage.id;
           const isRecommended = stage.id === recommendedStage.id;
           return `
             <button class="stage-node ${isActive ? "is-active" : ""} ${isRecommended ? "is-recommended" : ""}" type="button" data-stage="${stage.id}" style="--x:${stage.x}%; --y:${stage.y}%;">
-              <span>${stage.title}</span>
+              <span><b class="stage-order">${index + 1}</b>${stage.title}</span>
               <small>${completed}/${stageLevels.length}</small>
+            </button>
+          `;
+        }).join("")}
+      </div>
+      <div class="stage-sequence" aria-label="章节时间线">
+        ${stageGroups.map((stage, index) => {
+          const isActive = stage.id === selectedStage.id;
+          const stageLevels = stage.levels.map(id => levels.find(level => level.id === id)).filter(Boolean);
+          return `
+            <button class="stage-sequence-step ${isActive ? "is-active" : ""}" type="button" data-stage="${stage.id}">
+              <strong>${index + 1}</strong>
+              <span>${stage.title}</span>
+              <small>${stageLevels[0]?.no || ""}-${stageLevels[stageLevels.length - 1]?.no || ""}</small>
             </button>
           `;
         }).join("")}
@@ -587,6 +601,7 @@ function renderMap() {
       }).join("")}
       </div>
     </section>
+    </div>
   `;
 
   levelGrid.querySelectorAll("[data-stage]").forEach(button => {
