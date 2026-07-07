@@ -864,6 +864,9 @@ function renderStepper() {
 }
 
 function renderWarmupStep() {
+  const warmupTip = state.mode === "family"
+    ? "家长提示：只问“你为什么这样想？”不要马上纠正。"
+    : "小朋友提示：先说一个自己的想法，不用答得标准。可以用“我觉得……因为……”开头。";
   return `
     <article class="stage-card">
       <div class="stage-copy">
@@ -871,7 +874,7 @@ function renderWarmupStep() {
         <h2>${state.level.warmup}</h2>
         <p>先随便聊一聊，不用答得标准。今天只做这一关，可以慢慢说。</p>
       </div>
-      <div class="prompt-box">家长提示：只问“你为什么这样想？”不要马上纠正。</div>
+      <div class="prompt-box">${warmupTip}</div>
       <button class="primary-btn" type="button" data-next>进入故事</button>
     </article>
   `;
