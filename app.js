@@ -1825,3 +1825,15 @@ importJournalInput.addEventListener("change", event => importJournalFile(event.t
 bindGlobalViewButtons();
 bindModeButtons();
 renderMap();
+
+if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) {
+  const warmMapImage = () => {
+    const image = new Image();
+    image.src = "./assets/sanguo-cover-mobile.webp";
+  };
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(warmMapImage, { timeout: 1500 });
+  } else {
+    window.setTimeout(warmMapImage, 800);
+  }
+}
