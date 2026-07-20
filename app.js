@@ -962,7 +962,10 @@ function renderMap() {
     <div class="map-layout">
     <section class="game-map-panel" aria-label="三国阶段地图">
       <div class="stage-map">
-        <img src="./assets/sanguo-cover.webp" alt="三国地图" width="1024" height="1024" loading="lazy" decoding="async">
+        <picture>
+          <source media="(max-width: 768px)" srcset="./assets/sanguo-cover-mobile.webp">
+          <img src="./assets/sanguo-cover.webp" alt="三国地图" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <div class="cover-overlay cover-overlay-scroll">
           <strong>瑄宝闯三国</strong>
           <span>表达 · 判断 · 复盘 · 换办法</span>
